@@ -22,6 +22,10 @@ import Chip from "@mui/material/Chip";
 import { RWebShare } from "react-web-share";
 import SendIcon from "@mui/icons-material/Send";
 import { Fade } from "react-awesome-reveal";
+import Flash from 'react-reveal/Flash';
+import { useState } from "react";
+
+ 
 
 function Copyright() {
   return (
@@ -35,15 +39,15 @@ function Copyright() {
     </Typography>
   );
 }
-const TRACK1_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK2_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK3_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK4_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK5_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK6_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK7_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK8_FILE_URL = "http://localhost:3000/music.mp3";
-const TRACK9_FILE_URL = "http://localhost:3000/music.mp3";
+const TRACK1_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK2_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK3_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK4_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK5_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK6_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK7_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK8_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK9_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
 const cards = [
   { id: 1, name: "Tender", url: TRACK1_FILE_URL },
   { id: 2, name: "Love Of my Life", url: TRACK2_FILE_URL },
@@ -60,6 +64,19 @@ const cards = [
 const defaultTheme = createTheme();
 
 export default function LayoutBody() {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
@@ -107,25 +124,30 @@ export default function LayoutBody() {
                 }}
               >
                 {/* Header Text */}
-                <Box
-                  component="div"
-                  sx={{
-                    backgroundImage:
-                      "url('https://fontmeme.com/permalink/230814/9cf1198a733a6e3070fd76307197b297.png')",
-                    backgroundSize: "contain", // Change to 'cover' if necessary
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center", // Center the image
-                    width: "100%",
-                    height: "100px", // Adjust the height as needed
-                    color: "transparent", // Make the text transparent
-                    display: "flex",
-                    marginBottom: "30px",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  The Shinky Album
-                </Box>
+                <Flash when={isHovered}>
+        <Box
+          component="div"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          sx={{
+            backgroundImage:
+              "url('https://fontmeme.com/permalink/230814/9cf1198a733a6e3070fd76307197b297.png')",
+            backgroundSize: "contain", // Change to 'cover' if necessary
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center", // Center the image
+            width: "100%",
+            height: "100px", // Adjust the height as needed
+            color: "transparent", // Make the text transparent
+            display: "flex",
+            marginBottom: "30px",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: 'pointer', // Add the cursor style to indicate interactivity
+          }}
+        >
+          The Shinky Album
+        </Box>
+      </Flash>
                 <Typography
                   variant="h5"
                   align="left"
