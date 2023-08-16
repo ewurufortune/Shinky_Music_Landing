@@ -22,10 +22,8 @@ import Chip from "@mui/material/Chip";
 import { RWebShare } from "react-web-share";
 import SendIcon from "@mui/icons-material/Send";
 import { Fade } from "react-awesome-reveal";
-import Flash from 'react-reveal/Flash';
+import Flash from "react-reveal/Flash";
 import { useState } from "react";
-
- 
 
 function Copyright() {
   return (
@@ -39,15 +37,24 @@ function Copyright() {
     </Typography>
   );
 }
-const TRACK1_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK2_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK3_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK4_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK5_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK6_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK7_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK8_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
-const TRACK9_FILE_URL = "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK1_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK2_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK3_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK4_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK5_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK6_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK7_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK8_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
+const TRACK9_FILE_URL =
+  "https://shinky-music-git-main-ewurufortune.vercel.app/music.mp3";
 
 const cards = [
   { id: 1, name: "Tender", url: TRACK1_FILE_URL },
@@ -65,7 +72,6 @@ const cards = [
 const defaultTheme = createTheme();
 
 export default function LayoutBody() {
-
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -75,8 +81,6 @@ export default function LayoutBody() {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
-
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -126,29 +130,29 @@ export default function LayoutBody() {
               >
                 {/* Header Text */}
                 <Flash when={isHovered}>
-        <Box
-          component="div"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          sx={{
-            backgroundImage:
-              "url('https://fontmeme.com/permalink/230814/9cf1198a733a6e3070fd76307197b297.png')",
-            backgroundSize: "contain", // Change to 'cover' if necessary
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center", // Center the image
-            width: "100%",
-            height: "100px", // Adjust the height as needed
-            color: "transparent", // Make the text transparent
-            display: "flex",
-            marginBottom: "30px",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: 'pointer', // Add the cursor style to indicate interactivity
-          }}
-        >
-          The Shinky Album
-        </Box>
-      </Flash>
+                  <Box
+                    component="div"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    sx={{
+                      backgroundImage:
+                        "url('https://fontmeme.com/permalink/230814/9cf1198a733a6e3070fd76307197b297.png')",
+                      backgroundSize: "contain", // Change to 'cover' if necessary
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center", // Center the image
+                      width: "100%",
+                      height: "100px", // Adjust the height as needed
+                      color: "transparent", // Make the text transparent
+                      display: "flex",
+                      marginBottom: "30px",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "pointer", // Add the cursor style to indicate interactivity
+                    }}
+                  >
+                    The Shinky Album
+                  </Box>
+                </Flash>
                 <Typography
                   variant="h5"
                   align="left"
@@ -179,9 +183,9 @@ export default function LayoutBody() {
                   <Button variant="contained">Download The Album</Button>
                   <RWebShare
                     data={{
-                      text: "Like humans, flamingos make friends for life",
-                      url: "http://localhost:3000/",
-                      title: "Flamingos",
+                      text: " This album is a symphony of emotions, woven together with melodies that mirror the intricate dance of hearts entwined.",
+                      url: "https://shinky-music-git-main-ewurufortune.vercel.app/",
+                      title: "The Shinky Album",
                     }}
                     onClick={() => console.log("shared successfully!")}
                   >
@@ -242,7 +246,8 @@ export default function LayoutBody() {
                           {card.name}
                         </Typography>
                         <Typography>
-                          This is where you can write a short description / thought process while making the Track.
+                          This is where you can write a short description /
+                          thought process while making the Track.
                         </Typography>
                       </CardContent>
                       <CardActions sx={{ justifyContent: "center" }}>
@@ -290,7 +295,7 @@ export default function LayoutBody() {
           color="text.secondary"
           component="p"
         >
-    i'd love to connect with you, keep in touch!
+          i'd love to connect with you, keep in touch!
         </Typography>
         <Copyright />
       </Box>
